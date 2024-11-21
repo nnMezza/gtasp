@@ -13,94 +13,94 @@ size = Vector2(40, 61)
 
 [node name="main" type="Node2D"]
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
+[node name="Pavimento" type="StaticBody2D" parent="."]
 metadata/_edit_group_ = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Pavimento"]
 shape = SubResource("WorldBoundaryShape2D_r62dj")
 
-[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
+[node name="Sprite2D" type="Sprite2D" parent="Pavimento"]
 position = Vector2(12.5, 30)
 scale = Vector2(2.4213, 0.292929)
 texture = ExtResource("1_c7j2l")
 
-[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+[node name="Muro_sx" type="StaticBody2D" parent="."]
 position = Vector2(-249, -215)
 rotation = 1.5708
 metadata/_edit_group_ = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Muro_sx"]
 shape = SubResource("WorldBoundaryShape2D_r62dj")
 
-[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D2"]
+[node name="Sprite2D" type="Sprite2D" parent="Muro_sx"]
 position = Vector2(12.5, 30)
 scale = Vector2(2.4213, 0.292929)
 texture = ExtResource("1_c7j2l")
 
-[node name="StaticBody2D3" type="StaticBody2D" parent="."]
+[node name="Muro_dx" type="StaticBody2D" parent="."]
 position = Vector2(272, -190)
 rotation = -1.5708
 metadata/_edit_group_ = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Muro_dx"]
 shape = SubResource("WorldBoundaryShape2D_r62dj")
 
-[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D3"]
+[node name="Sprite2D" type="Sprite2D" parent="Muro_dx"]
 position = Vector2(12.5, 30)
 scale = Vector2(2.4213, 0.292929)
 texture = ExtResource("1_c7j2l")
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="Porta_1" type="Area2D" parent="."]
 position = Vector2(-211, -29)
 script = ExtResource("2_32elt")
 metadata/_edit_group_ = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Porta_1"]
 position = Vector2(0, 0.5)
 shape = SubResource("RectangleShape2D_rtd3w")
 
-[node name="Sprite2D" type="Sprite2D" parent="Area2D"]
+[node name="Sprite2D" type="Sprite2D" parent="Porta_1"]
 position = Vector2(-3.8147e-06, 3.8147e-06)
 rotation = 1.5708
 scale = Vector2(0.281734, 0.201573)
 texture = ExtResource("1_c7j2l")
 
-[node name="Area2D2" type="Area2D" parent="."]
+[node name="Porta_2" type="Area2D" parent="."]
 position = Vector2(-128, -29)
 script = ExtResource("3_orjod")
 metadata/_edit_group_ = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Porta_2"]
 position = Vector2(0, 0.5)
 shape = SubResource("RectangleShape2D_rtd3w")
 
-[node name="Sprite2D" type="Sprite2D" parent="Area2D2"]
+[node name="Sprite2D" type="Sprite2D" parent="Porta_2"]
 position = Vector2(-3.8147e-06, 3.8147e-06)
 rotation = 1.5708
 scale = Vector2(0.281734, 0.201573)
 texture = ExtResource("1_c7j2l")
 
-[node name="Area2D3" type="Area2D" parent="."]
+[node name="Porta_3" type="Area2D" parent="."]
 position = Vector2(-35, -30)
 script = ExtResource("4_ry3hf")
 metadata/_edit_group_ = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D3"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Porta_3"]
 position = Vector2(0, 0.5)
 shape = SubResource("RectangleShape2D_rtd3w")
 
-[node name="Sprite2D" type="Sprite2D" parent="Area2D3"]
+[node name="Sprite2D" type="Sprite2D" parent="Porta_3"]
 position = Vector2(-3.8147e-06, 3.8147e-06)
 rotation = 1.5708
 scale = Vector2(0.281734, 0.201573)
 texture = ExtResource("1_c7j2l")
 
-[node name="CharacterBody2D" parent="." instance=ExtResource("2_pja67")]
+[node name="Ferro" parent="." instance=ExtResource("2_pja67")]
 position = Vector2(34, -30)
 
-[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
-[connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]
-[connection signal="body_entered" from="Area2D2" to="Area2D2" method="_on_body_entered"]
-[connection signal="body_exited" from="Area2D2" to="Area2D2" method="_on_body_exited"]
-[connection signal="body_entered" from="Area2D3" to="Area2D3" method="_on_body_entered"]
-[connection signal="body_exited" from="Area2D3" to="Area2D3" method="_on_body_exited"]
+[connection signal="body_entered" from="Porta_1" to="Porta_1" method="_on_body_entered"]
+[connection signal="body_exited" from="Porta_1" to="Porta_1" method="_on_body_exited"]
+[connection signal="body_entered" from="Porta_2" to="Porta_2" method="_on_body_entered"]
+[connection signal="body_exited" from="Porta_2" to="Porta_2" method="_on_body_exited"]
+[connection signal="body_entered" from="Porta_3" to="Porta_3" method="_on_body_entered"]
+[connection signal="body_exited" from="Porta_3" to="Porta_3" method="_on_body_exited"]
