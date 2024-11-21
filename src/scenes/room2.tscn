@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://de1ol6q7lese1"]
+
+[ext_resource type="Texture2D" uid="uid://bg5judmkpsixo" path="res://assets/Screenshot from 2024-11-20 18-19-05.png" id="1_38wb4"]
+[ext_resource type="PackedScene" uid="uid://dhd6u3vb5a7h" path="res://scenes/ferro.tscn" id="2_g81jf"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_u3nis"]
+
+[node name="room2" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-139, -31)
+rotation = 1.5708
+scale = Vector2(0.439816, 1.37879)
+texture = ExtResource("1_38wb4")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("WorldBoundaryShape2D_u3nis")
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
+position = Vector2(3.00001, 47)
+scale = Vector2(2.33333, 0.464646)
+texture = ExtResource("1_38wb4")
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("2_g81jf")]
+position = Vector2(31, -22)

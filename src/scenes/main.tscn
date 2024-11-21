@@ -1,8 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://ik8222phh0vb"]
+[gd_scene load_steps=8 format=3 uid="uid://ik8222phh0vb"]
 
 [ext_resource type="Texture2D" uid="uid://bg5judmkpsixo" path="res://assets/Screenshot from 2024-11-20 18-19-05.png" id="1_c7j2l"]
 [ext_resource type="Script" path="res://scripts/Area2D.gd" id="2_32elt"]
 [ext_resource type="PackedScene" uid="uid://dhd6u3vb5a7h" path="res://scenes/ferro.tscn" id="2_pja67"]
+[ext_resource type="Script" path="res://scripts/porta2.gd" id="3_orjod"]
+[ext_resource type="Script" path="res://scripts/porta3.gd" id="4_ry3hf"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_r62dj"]
 
@@ -65,6 +67,7 @@ texture = ExtResource("1_c7j2l")
 
 [node name="Area2D2" type="Area2D" parent="."]
 position = Vector2(-128, -29)
+script = ExtResource("3_orjod")
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
@@ -79,6 +82,7 @@ texture = ExtResource("1_c7j2l")
 
 [node name="Area2D3" type="Area2D" parent="."]
 position = Vector2(-35, -30)
+script = ExtResource("4_ry3hf")
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D3"]
@@ -96,3 +100,7 @@ position = Vector2(34, -30)
 
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
 [connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]
+[connection signal="body_entered" from="Area2D2" to="Area2D2" method="_on_body_entered"]
+[connection signal="body_exited" from="Area2D2" to="Area2D2" method="_on_body_exited"]
+[connection signal="body_entered" from="Area2D3" to="Area2D3" method="_on_body_entered"]
+[connection signal="body_exited" from="Area2D3" to="Area2D3" method="_on_body_exited"]
